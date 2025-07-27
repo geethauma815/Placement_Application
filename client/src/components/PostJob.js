@@ -63,7 +63,7 @@ function PostJob() {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/api/jobs", payload);
+      const res = await axios.post("https://placement-application-1.onrender.com/api/jobs", payload);
       alert(res.data.message);
     } catch (err) {
       alert("Error: " + err.response.data.error);
