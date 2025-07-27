@@ -22,7 +22,7 @@ router.post('/extract-skills', (req, res) => {
 });
 
 module.exports = router;*/
-const express = require('express');
+/*const express = require('express');
 const { OpenAI } = require('openai');
 const router = express.Router();
 
@@ -47,5 +47,5 @@ router.post('/extract-skills', async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = router;*/
 
