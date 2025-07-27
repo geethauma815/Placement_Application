@@ -12,7 +12,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
+      const res = await axios.post("https://placement-application-1.onrender.com/api/auth/login", form);
       localStorage.setItem("user", JSON.stringify(res.data.user));
       setMsg("✅ Login successful");
       navigate("/dashboard");
