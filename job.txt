@@ -1,0 +1,5 @@
+We are hiring a full-stack web developer experienced in React and Node.js. The ideal candidate should have hands-on experience with MongoDB, be proficient in building RESTful APIs, and familiar with agile workflows.
+
+
+
+I am a passionate full-stack developer with experience in React, Node.js, and MongoDB. I’ve built several web apps and contributed to open-source projects. Skilled in JavaScript, REST APIs, and agile development practices.
