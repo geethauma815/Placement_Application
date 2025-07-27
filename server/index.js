@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
   res.send('Server is running');
 });
 
-const aiRoutes = require('./routes/ai');
-app.use('/api/ai', aiRoutes);
+/*const aiRoutes = require('./routes/ai');
+app.use('/api/ai', aiRoutes);*/
 
 const jobRoutes = require('./routes/jobs');
 app.use('/api/jobs', jobRoutes);
