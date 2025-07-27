@@ -15,7 +15,7 @@ function JobSearch() {
     setLoading(true);
     setMessage("");
     try {
-      const res = await axios.get("http://localhost:5000/api/jobs/search", {
+      const res = await axios.get("https://placement-application-1.onrender.com/api/jobs/search", {
         params: query,
       });
       setResults(res.data);
