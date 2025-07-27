@@ -5,7 +5,7 @@ function JobList() {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/jobs")
+    axios.get("https://placement-application-1.onrender.com/api/jobs")
       .then(res => setJobs(res.data))
       .catch(err => console.error(err));
   }, []);
