@@ -17,13 +17,16 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# 6. Copy and install Python dependencies into the virtual environment
+# 6. Copy and install Python dependencies
 COPY requirements.txt ./
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# 7. Copy the rest of your application code
+# 7. Download the spaCy model using its own command
+RUN python -m spacy download en_core_web_md
+
+# 8. Copy the rest of your application code
 COPY . .
 
-# 8. Define the command to start your server
+# 9. Define the command to start your server
 CMD ["node", "index.js"]
