@@ -384,7 +384,7 @@ import axios from "axios";
 const POLYGON_AMOY_CHAIN_ID = "0x13882"; // 80002
 const PLATFORM_FEE_AMOY = "0.00001";
 const RECEIVER_ADDRESS = "0x0A499e74e5C49e111a9D86Ae6A5f1306982782Bf";
-const API_URL = "http://localhost:5000/api/jobs";
+const API_URL = "https://placement-application-1.onrender.com/api/jobs";
 
 function PostJob() {
   const [mode, setMode] = useState("paid"); // "paid" or "free"
