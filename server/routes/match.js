@@ -1,27 +1,23 @@
+const { PythonShell } = require('python-shell');
 const express = require('express');
 const router = express.Router();
-const natural = require('natural');
-const { JSDOM } = require('jsdom');
 
-router.post('/match-score', (req, res) => {
-  const { bio, jobDesc } = req.body;
+router.post('/match-score', async (req, res) => {
+  const { jobDescription, candidateBio } = req.body;
 
-  if (!bio || !jobDesc) {
-    return res.status(400).json({ error: "bio and jobDesc are required" });
-  }
+  let options = {
+    mode: 'text',
+    pythonOptions: ['-u'],
+    scriptPath: __dirname,
+    args: [jobDescription, candidateBio],
+  };
 
-  const tokenizer = new natural.WordTokenizer();
-  const bioTokens = tokenizer.tokenize(bio.toLowerCase());
-  const jobTokens = tokenizer.tokenize(jobDesc.toLowerCase());
+  PythonShell.run('match_score.py', options, function (err, results) {
+    if (err) return res.status(500).json({ error: err.message });
 
-  const tfidf = new natural.TfIdf();
-  tfidf.addDocument(jobTokens.join(" "));
-  tfidf.addDocument(bioTokens.join(" "));
-
-  const score = tfidf.tfidf(bioTokens.join(" "), 0); // compare bio against jobDesc
-  const matchScore = Math.min(Math.round(score * 10), 100); // scale to 0–100
-
-  res.json({ matchScore });
+    const score = parseFloat(results[0]);
+    res.json({ score: Math.round(score * 100) });
+  });
 });
 
 module.exports = router;
