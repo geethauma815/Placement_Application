@@ -9,7 +9,7 @@ function MatchScore() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/match/match-score", {
+      const res = await axios.post("https://placement-application-1.onrender.com/api/match/match-score", {
         bio,
         jobDesc
       });
