@@ -50,7 +50,7 @@ Add the following network manually:
 ## Network Name: Polygon Amoy Testnet  
 RPC URL: https://rpc-amoy.polygon.technology  
 Chain ID: 80002  
-Currency Symbol: MATIC  
+Currency Symbol: AMOY
 Block Explorer: https://www.oklink.com/amoy  
 
 
