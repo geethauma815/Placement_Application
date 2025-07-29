@@ -1,4 +1,4 @@
-# server/Dockerfile
+# server/Dockerfile (Optimized)
 
 # 1. Start with a Node.js image
 FROM node:18-slim
@@ -17,16 +17,13 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-# 6. Copy and install Python dependencies
+# 6. Copy and install Python dependencies (this now includes the model)
 COPY requirements.txt ./
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# 7. Download the spaCy model using its own command
-RUN python -m spacy download en_core_web_md
-
-# 8. Copy the rest of your application code
+# 7. Copy the rest of your application code
 COPY . .
 
-# 9. Define the command to start your server
+# 8. Define the command to start your server
 CMD ["node", "index.js"]
