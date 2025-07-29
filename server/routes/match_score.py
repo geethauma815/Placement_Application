@@ -35,4 +35,4 @@ def match_score(bio, job_desc):
     keyword_boost = len(overlap) * 2  # 2 points per overlapping keyword
 
     final_score = vector_score + keyword_boost
-    return int(min(max(final_score, 0), 100))  # Clamp between 0 and 100
+    return int(min(max(final_score, 0), 100))  # Clamp between 0 and 100 #geetha
