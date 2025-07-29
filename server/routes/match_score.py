@@ -2,7 +2,7 @@ import spacy
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-nlp = spacy.load("en_core_web_md")
+nlp = spacy.load("en_core_web_sm")
 
 def preprocess(text):
     doc = nlp(text.lower())
